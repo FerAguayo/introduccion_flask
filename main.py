@@ -41,7 +41,6 @@ def operaciones_mates(num1,num2,op):
         result = f"La suma es: {num1*num2}"
     elif op == "divi":
         result = f"La suma es: {num1/num2}"
-
     return result
 
 @app.route("/html")
@@ -51,3 +50,21 @@ def mi_html():
 @app.route("/segunda")
 def mi_html_segunda():
     return render_template("segunda.html")
+
+#Al método operaciones matres agregamos una vista html y mostramos dentro de esta 
+#su resultado y los numeros y la operacion
+#si el usuario no para una operacion mostrar un mensaje debe ingresar operacion
+@app.route("/calculadora/<int:num1>/<int:num2>/<op>")
+def operaciones_mates_tarea(num1,num2,op):
+    result = ""
+    if op == "suma":
+        result = f"La suma es:{num1} + {num2} = {num1+num2}"
+    elif op == "resta":
+        result = f"La suma es: {num1} - {num2} = {num1-num2}"
+    elif op == "multi":
+        result = f"La suma es: {num1} * {num2} = {num1*num2}"
+    elif op == "divi":
+        result = f"La suma es: {num1} / {num2} = {num1/num2}"
+    else:
+        result = "Debe ingresar un comando de operación (suma,resta,multi o divi)"
+    return render_template("tarea.html", resultado = result)
