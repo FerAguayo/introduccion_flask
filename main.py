@@ -45,7 +45,7 @@ def operaciones_mates(num1,num2,op):
 
 @app.route("/html")
 def mi_html():
-    return render_template("hola.html", variable = "Hola, esto es una variable desde el método", nombre ="Fer")
+    return render_template("hola.html", variable = "Hola, esto es una variable desde el método", nombre ="Fer",list_fruta = ["platano","fresa","piña","uva","melon"])
 
 @app.route("/segunda")
 def mi_html_segunda():

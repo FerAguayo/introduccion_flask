@@ -19,11 +19,14 @@
     <h1>Esto es otro h1</h1>
     <h4 style="color: blue;background-color: aliceblue;text-align: center;">Esto es un saludo en h4</h4>
     <p class="my_style">Esto es un parrafo en html</p>
-    <button>Presiona</button>
-    <a href="/segunda" target="_blank">Ir a segunda</a>
-
     <p>{{variable}}</p>
     <p>{{nombre}}</p>
+    <p>Lista : {{list_fruta[-1]}}</p>
+    {% for item in list_fruta %}
+        <li>{{item}}</li>
+    {% endfor %}
+    <button>Presiona</button>
+    <a href="/segunda" target="_blank">Ir a segunda</a>
 
 
 </body>
