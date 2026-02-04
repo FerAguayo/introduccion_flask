@@ -10,7 +10,7 @@ pip install -r requirements.txt
 ```
 La librería utilizada es https://flask.palletsprojects.com/en/stable/
 
-# Iniciando en server flask
+# Ejecución del programa
 
 Para iniciar el servidor flask tendremos que hacer lo siguiente dependiendo de la plataforma:
 
@@ -29,3 +29,15 @@ Una vez exportado el parámetro debemos ejecutar el servidor:
 ## IMPORTANTE:
 Esto es un servidor de desarrollo, por favor no utilizarlo en producción.
 
+## Cambio de puertos
+
+Flask se ejecuta normalmente en localhost entrando por el puerto 5000, si por algún casual tienes el puerto usado con el siguiente parámetro lo cambias:
+
+``` flask --app main run -p "puerto que quieras añadir" ```
+
+## Activar el modo debug
+
+Cuando editamos algún parámetro en nuestro programa debemos de cerrar el server y volver a cargarlo, con el modo debug, eso se soluciona y aplica cambios en directo,
+el modo se aplica con el siguiente parámetro:
+
+```flask --app main --debug run ```
