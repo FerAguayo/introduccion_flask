@@ -1,4 +1,5 @@
-from flask import Flask
+from flask import Flask, render_template
+
 #Iniciamos la variable app con Flask
 app = Flask(__name__)
 
@@ -25,3 +26,28 @@ def cuadrado(parametro):
     parametro = int(parametro)
     return f"el cuadrado de {parametro} es {parametro*parametro}"
 
+#Ejercicio: Realizar una ruta que dinámicamente pueda solicitar o realizar
+#operaciones mataematicas de suma, resta, multiplicacion y division
+#debe ingresar dos parametros numericos y la operacion a realizar
+
+@app.route("/calculador/<int:num1>/<int:num2>/<op>")
+def operaciones_mates(num1,num2,op):
+    result = ""
+    if op == "suma":
+        result = f"La suma es: {num1+num2}"
+    elif op == "resta":
+        result = f"La suma es: {num1-num2}"
+    elif op == "multi":
+        result = f"La suma es: {num1*num2}"
+    elif op == "divi":
+        result = f"La suma es: {num1/num2}"
+
+    return result
+
+@app.route("/html")
+def mi_html():
+    return render_template("hola.html")
+
+@app.route("/segunda")
+def mi_html_segunda():
+    return render_template("segunda.html")
